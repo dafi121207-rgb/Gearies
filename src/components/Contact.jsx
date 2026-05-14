@@ -8,7 +8,7 @@ export default function Contact() {
             <div className="space-y-6 text-on-surface-variant font-light text-lg mb-12">
               <p><strong>Cara Pesan:</strong> Kami menyediakan kemudahan layanan pemesanan secara online.</p>
               <p><strong>Promo Menarik:</strong> Ikuti kami di media sosial dan dapatkan promo serta diskon khusus pada saat pembukaan usaha.</p>
-              <p><strong>Kontak Kami:</strong> Hubungi layanan pelanggan kami yang ramah dan responsif melalui nomor telepon +62 812-2365-2700.</p>
+              <p><strong>Kontak Kami:</strong> Hubungi layanan pelanggan kami yang ramah dan responsif melalui nomor telepon +62 859-7330-4445.</p>
             </div>
             <div className="space-y-10">
               <div className="flex items-start gap-6">
@@ -31,7 +31,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-16">
-              <a className="inline-flex items-center gap-4 bronze-glow text-on-primary px-12 py-6 rounded-md font-bold text-xl transition-all hover:shadow-xl hover:shadow-primary/20" href="https://wa.me/6281223652700" target="_blank" rel="noopener noreferrer">
+              <a className="inline-flex items-center gap-4 bronze-glow text-on-primary px-12 py-6 rounded-md font-bold text-xl transition-all hover:shadow-xl hover:shadow-primary/20" href="https://wa.me/6285973304445?text=Halo%20saya%20ingin%20berlangganan%20layanan%20dari%20Anda." target="_blank" rel="noopener noreferrer">
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>chat</span>
                 Pesan via WhatsApp
               </a>
