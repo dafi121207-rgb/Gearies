@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { supabase } from '../utils/supabase';
 
 export default function Order() {
   const navigate = useNavigate();
@@ -26,7 +27,24 @@ export default function Order() {
   const [shippingMethod, setShippingMethod] = useState("KIRIM REGULER");
   const [customerName, setCustomerName] = useState("");
   
-  const handleWhatsApp = () => {
+  const handleWhatsApp = async () => {
+    // Save order to Supabase
+    const { data, error } = await supabase.from('orders').insert([
+      {
+        customer_name: customerName,
+        items: items.map(item => ({ name: item.name, quantity: item.quantity, price: item.price })),
+        subtotal,
+        shipping_method: shippingMethod,
+        shipping_fee: forgingFee,
+        total
+      }
+    ])
+    if (error) {
+      console.error('Error saving order:', error)
+      alert('Failed to save order. Please try again.')
+      return
+    }
+
     let message = `Halo Gearies Cookies, saya ingin memesan:\n\n`;
     items.forEach(item => {
       message += `- ${item.quantity}x ${item.name} (${formatRupiah(item.price * item.quantity)})\n`;
@@ -36,7 +54,7 @@ export default function Order() {
     message += `\n*TOTAL: ${formatRupiah(total)}*\n\n`;
     message += `Nama Pemesan: ${customerName || "-"}`;
 
-    const waUrl = `https://wa.me/6281223652700?text=${encodeURIComponent(message)}`;
+    const waUrl = `https://wa.me/6285973304445?text=${encodeURIComponent(message)}`;
     window.open(waUrl, '_blank');
   };
   

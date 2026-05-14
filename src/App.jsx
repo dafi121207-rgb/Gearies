@@ -5,6 +5,7 @@ import About from './components/About';
 import Features from './components/Features';
 import Contact from './components/Contact';
 import Order from './components/Order';
+import Auth from './components/Auth';
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <Hero />
       <About />
       <Features />
+      <Auth />
       <Contact />
     </Layout>
   );
